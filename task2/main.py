@@ -7,6 +7,7 @@ print(path1,path2)
 file1=[]
 file2=[]
 
+# Считывание данных
 with open(path1,'r') as tf:
     for i in tf:
         file1.append(i)
@@ -18,6 +19,7 @@ with open(path2,'r') as tf:
     for i in tf:
         file2.append(i)
 
+# Создание массивов x и y для точек из 2-го файла
 ln=len(file2)
 m_dot_x=[0]*ln
 m_dot_y=[0]*ln
@@ -26,6 +28,8 @@ for i in range(ln):
     m_dot_x[i]=int(m_dot_x[i])
     m_dot_y[i]=int(str(m_dot_y[i]).strip())
 
+# По формуле находится расстояние до точки,
+# а затем определяется лежит ли точка вне/на/снаружи окружности
 for i in range(ln):
     dist=pow(pow(m_dot_x[i]-x_center,2)
              +pow(m_dot_y[i]-y_center,2),0.5)
